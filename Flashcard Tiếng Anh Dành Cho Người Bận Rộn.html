@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>Mục lục Flashcard — Tiếng Anh Dành Cho Người Bận Rộn</title>
+<style>
+  :root{
+    --green:#1D9E75; --green-d:#158A63; --green-l:#E7F6F0;
+    --teal:#12B3A0; --teal-d:#0E8C7C; --teal-l:#E4F7F5;
+    --ink:#1F2A28; --muted:#6B7A76; --bg:#F1F5F3;
+    --card:#FFFFFF; --line:#E3EAE7;
+    --grad-green:linear-gradient(135deg,#1D9E75,#12B3A0);
+    --grad-teal:linear-gradient(135deg,#12B3A0,#2E8BC0);
+    --glow:0 14px 32px -12px rgba(29,158,117,.28),0 3px 10px rgba(21,138,99,.08);
+    --page:radial-gradient(1100px 560px at 50% -12%,#E7F6F0 0%,#F1F5F3 55%);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+    background:var(--page);background-attachment:fixed;color:var(--ink);
+    min-height:100dvh;display:flex;justify-content:center;padding:20px 14px 40px;
+  }
+  .wrap{width:100%;max-width:460px}
+  .hero{text-align:center;margin-bottom:22px}
+  .hero .kicker{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--green-d);margin-bottom:6px}
+  .hero h1{font-size:23px;font-weight:800;margin:0 0 8px;line-height:1.3}
+  .hero h1 .grad{background:var(--grad-green);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hero p{margin:0;color:var(--muted);font-size:14px;font-weight:500;line-height:1.5}
+
+  .section{margin-top:22px}
+  .section-head{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding:0 2px}
+  .section-head .dot{width:10px;height:10px;border-radius:50%;flex:none}
+  .section-head h2{font-size:15px;font-weight:800;margin:0}
+  .section-head .cnt{margin-left:auto;font-size:11px;font-weight:700;color:var(--muted);background:var(--card);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+
+  .part-label{font-size:11px;font-weight:800;letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin:14px 2px 6px}
+  .part-label:first-of-type{margin-top:4px}
+
+  .list{display:flex;flex-direction:column;gap:10px}
+  .item{
+    display:flex;align-items:center;gap:12px;
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:12px 14px;box-shadow:var(--glow);
+    text-decoration:none;color:inherit;
+    transition:transform .12s ease;
+  }
+  .item:active{transform:scale(.98)}
+  .badge{
+    flex:none;width:44px;height:44px;border-radius:14px;
+    color:#fff;display:grid;place-items:center;
+    font-weight:800;font-size:12px;line-height:1.15;text-align:center;
+  }
+  .badge.q1{background:var(--grad-green)}
+  .badge.q2{background:var(--grad-teal)}
+  .item-body{flex:1;min-width:0}
+  .item-title{font-weight:700;font-size:15px;line-height:1.3}
+  .item-sub{font-size:12px;color:var(--muted);font-weight:600;margin-top:2px}
+  .arrow{flex:none;color:var(--green-d);font-size:18px;font-weight:800}
+
+  .footer{margin-top:26px;text-align:center;color:var(--muted);font-size:12px;font-weight:600;line-height:1.7}
+  .footer .tip{
+    display:inline-block;margin-top:10px;background:var(--green-l);color:var(--green-d);
+    padding:8px 14px;border-radius:999px;font-size:12px;font-weight:700;
+  }
+
+  .source{
+    margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:14px 16px;text-align:center;
+  }
+  .source .src-title{font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .source p{margin:2px 0;font-size:12.5px;color:var(--muted);font-weight:600;line-height:1.6}
+  .source b{color:var(--ink)}
+
+  .wm-footer{margin-top:18px;padding-top:10px;border-top:1px dashed var(--line);text-align:center;font-size:11px;color:var(--muted);opacity:.7}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div class="kicker">Mục lục Flashcard</div>
+    <h1>📚 Tiếng Anh dành cho <span class="grad">Người Bận Rộn</span></h1>
+    <p style="font-weight:700;color:var(--green-d);margin-bottom:6px">English for Busy People</p>
+    <p>Bấm vào bài tương ứng để mở flashcard học &amp; kiểm tra từ vựng — mỗi bài có sẵn cả 2 chế độ 🎴 Ôn thẻ và 📝 Kiểm tra.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <span class="dot" style="background:var(--green)"></span>
+      <h2>📗 Quyển 1 — Cuộc sống đời thường</h2>
+      <span class="cnt">16 bài</span>
+    </div>
+    <div class="list">
+      <div class="part-label">Phần 1 · Cuộc sống gia đình</div>
+      <a class="item" href="Quyển 1/(P1)-Bai1-TinhCamGiaDinh-Flashcard.html">
+        <div class="badge q1">P1<br/>B1</div>
+        <div class="item-body"><div class="item-title">Tình cảm gia đình</div><div class="item-sub">105 thẻ · 13 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 1/(P1)-Bai2-CongViecThuongNgay-Flashcard.html">
+        <div class="badge q1">P1<br/>B2</div>
+        <div class="item-body"><div class="item-title">Công việc thường ngày</div><div class="item-sub">102 thẻ · 10 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 1/(P1)-Bai3-ViecNha-Flashcard.html">
+        <div class="badge q1">P1<br/>B3</div>
+        <div class="item-body"><div class="item-title">Việc nhà</div><div class="item-sub">111 thẻ · 15 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+
+      <div class="part-label">Phần 2 · Tình yêu và hôn nhân</div>
+      <a class="item" href="Quyển 1/(P2)-Bai1-TinhYeu-Flashcard.html">
+        <div class="badge q1">P2<br/>B1</div>
+        <div class="item-body"><div class="item-title">Tình yêu</div><div class="item-sub">118 thẻ · 15 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 1/(P2)-Bai2-HonNhan-Flashcard.html">
+        <div class="badge q1">P2<br/>B2</div>
+        <div class="item-body"><div class="item-title">Hôn nhân</div><div class="item-sub">108 thẻ · 10 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 1/(P2)-Bai3-VanDeTinhCam-Flashcard.html">
+        <div class="badge q1">P2<br/>B3</div>
+        <div class="item-body"><div class="item-title">Vấn đề tình cảm</div><div class="item-sub">83 thẻ · 7 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+
+      <div class="part-label">Phần 3 · Giao tiếp xã hội</div>
+      <a class="item" href="Quyển 1/(P3)-Bai1-QuenBiet-Flashcard.html">
+        <div class="badge q1">P3<br/>B1</div>
+        <div class="item-body"><div class="item-title">Quen biết</div><div class="item-sub">129 thẻ · 15 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 1/(P3)-Bai2-GiaoTiep-Flashcard.html">
+        <div class="badge q1">P3<br/>B2</div>
+        <div class="item-body"><div class="item-title">Giao tiếp</div><div class="item-sub">157 thẻ · 17 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 1/(P3)-Bai3-ChuDeGiaoTiep-Flashcard.html">
+        <div class="badge q1">P3<br/>B3</div>
+        <div class="item-body"><div class="item-title">Chủ đề giao tiếp</div><div class="item-sub">158 thẻ · 16 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 1/(P3)-Bai4-BieuDatCamXuc-Flashcard.html">
+        <div class="badge q1">P3<br/>B4</div>
+        <div class="item-body"><div class="item-title">Biểu đạt cảm xúc</div><div class="item-sub">166 thẻ · 20 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+
+      <div class="part-label">Phần 4 · Cuộc sống hằng ngày</div>
+      <a class="item" href="Quyển 1/(P4)-Bai1-VaoNhaHangGoiThucAn-Flashcard.html">
+        <div class="badge q1">P4<br/>B1</div>
+        <div class="item-body"><div class="item-title">Vào nhà hàng gọi thức ăn</div><div class="item-sub">136 thẻ · 16 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 1/(P4)-Bai2-DiMuaSam-Flashcard.html">
+        <div class="badge q1">P4<br/>B2</div>
+        <div class="item-body"><div class="item-title">Đi mua sắm</div><div class="item-sub">159 thẻ · 15 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 1/(P4)-Bai3-DiCatTocLamDep-Flashcard.html">
+        <div class="badge q1">P4<br/>B3</div>
+        <div class="item-body"><div class="item-title">Đi cắt tóc, làm đẹp</div><div class="item-sub">132 thẻ · 11 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 1/(P4)-Bai4-DiKhamBenh-Flashcard.html">
+        <div class="badge q1">P4<br/>B4</div>
+        <div class="item-body"><div class="item-title">Đi khám bệnh</div><div class="item-sub">211 thẻ · 9 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 1/(P4)-Bai5-GuiBuuPham-Flashcard.html">
+        <div class="badge q1">P4<br/>B5</div>
+        <div class="item-body"><div class="item-title">Gửi bưu phẩm</div><div class="item-sub">170 thẻ · 10 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 1/(P4)-Bai6-NghiepVuNganHang-Flashcard.html">
+        <div class="badge q1">P4<br/>B6</div>
+        <div class="item-body"><div class="item-title">Nghiệp vụ ngân hàng</div><div class="item-sub">203 thẻ · 14 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <span class="dot" style="background:var(--teal)"></span>
+      <h2>📘 Quyển 2 — Giao thông, Nghề nghiệp, Kinh doanh</h2>
+      <span class="cnt">18 bài</span>
+    </div>
+    <div class="list">
+      <div class="part-label">Phần 1 · Giao thông và khách sạn</div>
+      <a class="item" href="Quyển 2/(P1)-Bai1-XuatNhapCanh-Flashcard.html">
+        <div class="badge q2">P1<br/>B1</div>
+        <div class="item-body"><div class="item-title">Xuất nhập cảnh</div><div class="item-sub">88 thẻ · 12 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 2/(P1)-Bai2-GiaoThong-Flashcard.html">
+        <div class="badge q2">P1<br/>B2</div>
+        <div class="item-body"><div class="item-title">Giao thông</div><div class="item-sub">112 thẻ · 15 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 2/(P1)-Bai3-DichVuKhachSan-Flashcard.html">
+        <div class="badge q2">P1<br/>B3</div>
+        <div class="item-body"><div class="item-title">Dịch vụ khách sạn</div><div class="item-sub">122 thẻ · 17 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+
+      <div class="part-label">Phần 2 · Giải trí – Thú tiêu khiển – Thể thao</div>
+      <a class="item" href="Quyển 2/(P2)-Bai1-GiaiTri-Flashcard.html">
+        <div class="badge q2">P2<br/>B1</div>
+        <div class="item-body"><div class="item-title">Giải trí</div><div class="item-sub">97 thẻ · 15 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 2/(P2)-Bai2-ThuTieuKhien-Flashcard.html">
+        <div class="badge q2">P2<br/>B2</div>
+        <div class="item-body"><div class="item-title">Thú tiêu khiển</div><div class="item-sub">122 thẻ · 15 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 2/(P2)-Bai3-TheDuc-Flashcard.html">
+        <div class="badge q2">P2<br/>B3</div>
+        <div class="item-body"><div class="item-title">Thể dục</div><div class="item-sub">75 thẻ · 10 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 2/(P2)-Bai4-TheThao-Flashcard.html">
+        <div class="badge q2">P2<br/>B4</div>
+        <div class="item-body"><div class="item-title">Thể thao</div><div class="item-sub">76 thẻ · 17 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+
+      <div class="part-label">Phần 3 · Trường học</div>
+      <a class="item" href="Quyển 2/(P3)-Bai1-HocTapVaThiCu-Flashcard.html">
+        <div class="badge q2">P3<br/>B1</div>
+        <div class="item-body"><div class="item-title">Học tập và thi cử</div><div class="item-sub">88 thẻ · 14 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 2/(P3)-Bai2-HoatDongNgoaiKhoa-Flashcard.html">
+        <div class="badge q2">P3<br/>B2</div>
+        <div class="item-body"><div class="item-title">Hoạt động ngoại khóa</div><div class="item-sub">59 thẻ · 11 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 2/(P3)-Bai3-DiDuHoc-Flashcard.html">
+        <div class="badge q2">P3<br/>B3</div>
+        <div class="item-body"><div class="item-title">Đi du học</div><div class="item-sub">61 thẻ · 16 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 2/(P3)-Bai4-TotNghiep-Flashcard.html">
+        <div class="badge q2">P3<br/>B4</div>
+        <div class="item-body"><div class="item-title">Tốt nghiệp</div><div class="item-sub">34 thẻ · 9 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+
+      <div class="part-label">Phần 4 · Nghề nghiệp</div>
+      <a class="item" href="Quyển 2/(P4)-Bai1-XinViecVaTuChuc-Flashcard.html">
+        <div class="badge q2">P4<br/>B1</div>
+        <div class="item-body"><div class="item-title">Xin việc và Từ chức</div><div class="item-sub">47 thẻ · 15 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 2/(P4)-Bai2-PhongVan-Flashcard.html">
+        <div class="badge q2">P4<br/>B2</div>
+        <div class="item-body"><div class="item-title">Phỏng vấn</div><div class="item-sub">66 thẻ · 15 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 2/(P4)-Bai3-TrongGioLamViec-Flashcard.html">
+        <div class="badge q2">P4<br/>B3</div>
+        <div class="item-body"><div class="item-title">Trong giờ làm việc</div><div class="item-sub">57 thẻ · 18 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+
+      <div class="part-label">Phần 5 · Kinh doanh và ngoại thương</div>
+      <a class="item" href="Quyển 2/(P5)-Bai1-HoiNghiNgoaiThuong-Flashcard.html">
+        <div class="badge q2">P5<br/>B1</div>
+        <div class="item-body"><div class="item-title">Hội nghị ngoại thương</div><div class="item-sub">58 thẻ · 7 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 2/(P5)-Bai2-DamPhanNgoaiThuong-Flashcard.html">
+        <div class="badge q2">P5<br/>B2</div>
+        <div class="item-body"><div class="item-title">Đàm phán ngoại thương</div><div class="item-sub">79 thẻ · 9 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 2/(P5)-Bai3-HoatDongNgoaiThuong-Flashcard.html">
+        <div class="badge q2">P5<br/>B3</div>
+        <div class="item-body"><div class="item-title">Hoạt động ngoại thương</div><div class="item-sub">91 thẻ · 14 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="item" href="Quyển 2/(P5)-Bai4-MauDichQuocTe-Flashcard.html">
+        <div class="badge q2">P5<br/>B4</div>
+        <div class="item-body"><div class="item-title">Mậu dịch quốc tế</div><div class="item-sub">103 thẻ · 18 chủ đề</div></div>
+        <div class="arrow">›</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="source">
+    <div class="src-title">Trích nguồn sách</div>
+    <p><b>Tiếng Anh dành cho Người Bận Rộn</b> (English for Busy People) — Tập 1 &amp; Tập 2</p>
+    <p>Tác giả: <b>Hoàng Thanh</b>, cộng tác với nhóm Giáo viên Anh ngữ Thực hành (biên soạn)</p>
+    <p>NXB Tổng hợp Thành phố Hồ Chí Minh</p>
+  </div>
+
+  <div class="footer">
+    16 bài Quyển 1 + 18 bài Quyển 2 = 34 bài, mỗi bài đã có sẵn 2 chế độ 🎴 Ôn thẻ và 📝 Kiểm tra (giới hạn 20 câu/lượt, ưu tiên từ chưa thuộc).<br/>
+    <div class="tip">🔖 Lưu trang này lại để mở nhanh lần sau</div>
+  </div>
+
+  <div class="wm-footer">© Ms. Thủy Tiên · 0388929741</div>
+</div>
+</body>
+</html>
